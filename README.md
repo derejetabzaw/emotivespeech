@@ -43,6 +43,6 @@ ROS Nodes
 ###### PARAMETERS: 
  * /emotrans/chunk_size value: 1024
  * /emotrans/emotion_intensity: 100
- * /emotrans/file_names value: []
+ * /emotrans/file_names value: [ ]
  * /emotrans/sampling_frequency value: 8000
 
