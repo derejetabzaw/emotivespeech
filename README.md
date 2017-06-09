@@ -1,7 +1,7 @@
 # Emotive Speech
 
 A ROS package for emotive speech generation based on DAVID: An open-source platform for real-time emotional speech
-transformation
+transformation using pysox
 
 Prerequisites
 -------------
