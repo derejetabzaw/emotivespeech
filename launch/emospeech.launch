@@ -1,0 +1,5 @@
+<launch>
+  <node pkg="emo_speech" name="emotrans" type="EmoTrans.py" output="screen">   
+  <rosparam file="$(find emo_speech)/param/default.yaml" command="load"/>
+  </node>
+</launch>
