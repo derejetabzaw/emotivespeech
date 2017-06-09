@@ -36,11 +36,10 @@ Run
 roslaunch emo_speech emospeech.launch
 ```
 
-ROS Nodes
----------
-#### /emotrans
+###### rosnode
+ * /emotrans
 
-###### PARAMETERS: 
+###### rosparam
  * /emotrans/chunk_size value: 1024
  * /emotrans/emotion_intensity: 100
  * /emotrans/file_names value: [ ]
