@@ -8,7 +8,6 @@ setup(name='Emotive_Speech',
       author='Dereje Tadesse',
       author_email='dereje.tadesse@hansonrobotics.com',
       url='https://github.com/dergkat/emotivespeech',
-      install_requires=['pysptk >= 0.1.4','sox  >= 1.2.9 '],
       packages=['src'],
       license='Copyright 2017 Hanson Robotics. All rights reserved.'
      )
