@@ -10,7 +10,10 @@ sudo pip install sox
 echo "Finished Installing pysox"
 sleep 2
 echo "Installing pysptk-Python Wrapper for Speech Processing Tool Kit"
-cd lib/pysptk
+mkdir lib
+cd lib
+git clone https://github.com/r9y9/pysptk
+cd pysptk
 sudo python setup.py install 
 echo "Done Installing pysptk"
 
