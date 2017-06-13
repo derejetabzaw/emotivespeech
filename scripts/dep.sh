@@ -6,7 +6,7 @@
 echo "Library Dependecies..."
 sleep 3
 echo "Installing pysox-Python Wrapper for the SoX-Sound Exchange"
-sudo pip2 install sox
+sudo pip install sox
 echo "Finished Installing pysox"
 sleep 2
 echo "Installing pysptk-Python Wrapper for Speech Processing Tool Kit"
