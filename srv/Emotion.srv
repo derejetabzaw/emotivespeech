@@ -1,0 +1,4 @@
+float32 length
+string text
+---
+float32 wav
