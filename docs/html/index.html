@@ -1,0 +1,370 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Welcome to EmoTrans’s documentation! &mdash; EmoTrans 1.1.0 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="EmoTrans 1.1.0 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">EmoTrans 1.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="welcome-to-emotrans-s-documentation">
+<h1>Welcome to EmoTrans&#8217;s documentation!<a class="headerlink" href="#welcome-to-emotrans-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+<span class="target" id="module-EmotiveSpeech"></span><dl class="function">
+<dt id="EmotiveSpeech.emotive_speech">
+<tt class="descclassname">EmotiveSpeech.</tt><tt class="descname">emotive_speech</tt><big>(</big><em>x</em>, <em>fs</em>, <em>typeOfEmotion</em><big>)</big><a class="headerlink" href="#EmotiveSpeech.emotive_speech" title="Permalink to this definition">¶</a></dt>
+<dd><p>A caller module</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; input file path</li>
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The sampling frequency</li>
+<li><strong>typeOfEmotion</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The type of selected emotion</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">output file path</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">str</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="module-analysis"></span><dl class="function">
+<dt id="analysis.pitch_detect">
+<tt class="descclassname">analysis.</tt><tt class="descname">pitch_detect</tt><big>(</big><em>sndarray</em>, <em>fs</em>, <em>chunk_size</em><big>)</big><a class="headerlink" href="#analysis.pitch_detect" title="Permalink to this definition">¶</a></dt>
+<dd><p>pitch_detect computes the fundamental frequency/pitches of blocks/ of Chunks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>sndarray</strong> (<a class="reference external" href="https://docs.python.org/library/array.html#module-array" title="(in Python v2.7)"><em>array</em></a>) &#8211; Discrete Data</li>
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Sampling frequency</li>
+<li><strong>chunk_size</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Chunk size</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">f0</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="analysis.zero_crossing_rate_blocks">
+<tt class="descclassname">analysis.</tt><tt class="descname">zero_crossing_rate_blocks</tt><big>(</big><em>wavedata</em>, <em>Chunk_Size</em>, <em>fs</em><big>)</big><a class="headerlink" href="#analysis.zero_crossing_rate_blocks" title="Permalink to this definition">¶</a></dt>
+<dd><p>This module computes the zero crossing rate of blocks.
+It is important in classifying/detecting the voiced and unvoiced region.
+If the ZCR is smaller then it is categorized as voiced.
+If the ZCR is greater then it is categorized as unvoiced.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wavedate</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Discrete Data</li>
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Sampling frequency</li>
+<li><strong>chunk_size</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Chunk size</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">zero_crossing_rate_obj</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">obj</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="analysis.root_mean_square">
+<tt class="descclassname">analysis.</tt><tt class="descname">root_mean_square</tt><big>(</big><em>x</em>, <em>Chunk_Size</em>, <em>fs</em><big>)</big><a class="headerlink" href="#analysis.root_mean_square" title="Permalink to this definition">¶</a></dt>
+<dd><p>root_mean_square computes the root mean square of the blocks and is important for categorizing inflection pitch-bending samples</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; </li>
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Sampling frequency</li>
+<li><strong>chunk_size</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Chunk size</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">rms-root</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">int</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="analysis.starting_info">
+<tt class="descclassname">analysis.</tt><tt class="descname">starting_info</tt><big>(</big><em>x</em>, <em>f0</em>, <em>fs</em>, <em>Chunk_Size</em><big>)</big><a class="headerlink" href="#analysis.starting_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>starting_info specifies the voiced and unvoiced starting points.
+It also contains the samples of the voiced and unvoiced samples.
+It will help,mainly,to get the voiced_samples.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; Discrete Data</li>
+<li><strong>f0</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Fundamental frequency</li>
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Sampling Frequency</li>
+<li><strong>Chunk_Size</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Chunk Size</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">voiced_unvoiced_starting_info_object- Contains object of the unvoicedStart,VoicedStart,unvoicedSamples(&#8216;USamp&#8217;) and voicedSamples(VSamp)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">obj_array</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="module-batchprocess"></span><dl class="function">
+<dt id="batchprocess.process_variables">
+<tt class="descclassname">batchprocess.</tt><tt class="descname">process_variables</tt><big>(</big><em>x</em>, <em>fs</em>, <em>CHUNK_SIZE</em><big>)</big><a class="headerlink" href="#batchprocess.process_variables" title="Permalink to this definition">¶</a></dt>
+<dd><p>computes basic variables important for the entire process.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>obj</em>) &#8211; discrete data from the wavefile</li>
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Sampling frequency</li>
+<li><strong>chunk_size</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The size of block containing datas</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Time Stamps-This are the time stamps in secs sampled at fs
+Consecutive Blocks- This are consecutive blocks that are important for inflection and/or pitch bending</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">obj</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="batchprocess.batch_analysis">
+<tt class="descclassname">batchprocess.</tt><tt class="descname">batch_analysis</tt><big>(</big><em>x</em>, <em>fs</em>, <em>CHUNK_SIZE</em><big>)</big><a class="headerlink" href="#batchprocess.batch_analysis" title="Permalink to this definition">¶</a></dt>
+<dd><p>computes the fundamental frequency/pitch of blocks/,voiced_samples and the rms values that are important for analysis and will be used for pre-process</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>x</strong> (<em>obj</em>) &#8211; discrete data from the wavefile</li>
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Sampling frequency</li>
+<li><strong>chunk_size</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; The size of block containing datas</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first"><p>fundamental_frequency_in_blocks- This is a fundamental frequency(or pitch) for the blocks in Chunk_Size</p>
+<p>voiced_samples-This are samples that contain the voiced samples.Will be usedfor the entire process and is important for the synthesis process as well.</p>
+<p>rms- is the root mean square computation that will be important for ategorizing inflecion/pitch bending samples.</p>
+</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">obj</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="batchprocess.batch_preprocess">
+<tt class="descclassname">batchprocess.</tt><tt class="descname">batch_preprocess</tt><big>(</big><em>fundamental_frequency_in_blocks</em>, <em>voiced_samples</em>, <em>rms</em><big>)</big><a class="headerlink" href="#batchprocess.batch_preprocess" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the pre-process or pre-synthesis stage. This module computes the samples for the begining of utterances and finally computes the selected_inflect_block</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fundamental_frequency_in_blocks</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; This is a fundamental frequency(or pitch) for the blocks in Chunk_Size</li>
+<li><strong>voiced_samples</strong> (<em>obj</em>) &#8211; This are samples that contain the voiced samples.</li>
+<li><strong>rms</strong> (<em>obj</em>) &#8211; This is the root mean square computation</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">selected_inflect_block- are the blocks that are important for the synthesis process</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">obj</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="batchprocess.batch_synthesis">
+<tt class="descclassname">batchprocess.</tt><tt class="descname">batch_synthesis</tt><big>(</big><em>fs</em>, <em>CONSECUTIVE_BLOCKS</em>, <em>TIME_STAMPS</em>, <em>selected_inflect_block_new</em>, <em>typeOfEmotion</em><big>)</big><a class="headerlink" href="#batchprocess.batch_synthesis" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the synthesis stage. This modules gives emotions of &#8220;Happy&#8221;,&#8221;Happy-Tensed&#8221;,&#8221;Sad&#8221;,&#8221;Afraid&#8221; for the wavefile using the process variables and selected_inflect_blocks</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Sampling frequency</li>
+<li><strong>CONSECUTIVE_BLOCKS</strong> (<em>obj</em>) &#8211; </li>
+<li><strong>selected_inflect_block_new</strong> (<em>obj</em>) &#8211; </li>
+<li><strong>typeOfEmotion</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">output- Modified/Synthesised wavefile</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">obj</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="module-preprocess"></span><dl class="function">
+<dt id="preprocess.utterance_region_begin_samples">
+<tt class="descclassname">preprocess.</tt><tt class="descname">utterance_region_begin_samples</tt><big>(</big><em>voiced_samples</em><big>)</big><a class="headerlink" href="#preprocess.utterance_region_begin_samples" title="Permalink to this definition">¶</a></dt>
+<dd><p>utterance_region_begin_samples(voiced_samples) utterance_region_begin_samples - This module help in finding the begining of voice samples and its respective index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>voiced_samples</strong> (<em>obj</em>) &#8211; </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">voice_sample_begin-Contains array that contain the beginning voiced samples voice_sample_index-Contains array that contain the index of the voiced_sample_begin</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">obj</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
+<li><a class="reference internal" href="py-modindex.html"><em>Module Index</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Welcome to EmoTrans&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li><a href="#">EmoTrans 1.1.0 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2017, Temaledegn Yisfa.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.2.
+    </div>
+  </body>
+</html>

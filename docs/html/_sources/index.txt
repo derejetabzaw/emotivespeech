@@ -1,0 +1,146 @@
+.. EmoTrans documentation master file, created by
+   sphinx-quickstart on Fri Jun 23 11:42:21 2017.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to EmoTrans's documentation!
+====================================
+
+Contents:
+
+.. toctree::
+   :maxdepth: 2
+
+.. py:module:: EmotiveSpeech
+
+.. py:function:: emotive_speech(x,fs,typeOfEmotion)
+
+   A caller module
+
+   :param str x: input file path
+   :param str fs: The sampling frequency
+   :param str typeOfEmotion: The type of selected emotion
+   :return: output file path
+   :rtype: str
+
+.. py:module:: analysis
+
+.. py:function:: pitch_detect(sndarray,fs, chunk_size)
+
+ 	pitch_detect computes the fundamental frequency/pitches of blocks/ of Chunks
+
+ 	:param array sndarray: Discrete Data
+ 	:param int fs: Sampling frequency
+ 	:param int chunk_size: Chunk size
+ 	:return: f0
+ 	:rtype: int
+
+.. py:function:: zero_crossing_rate_blocks(wavedata,Chunk_Size,fs)
+
+	This module computes the zero crossing rate of blocks.
+	It is important in classifying/detecting the voiced and unvoiced region.
+	If the ZCR is smaller then it is categorized as voiced.
+	If the ZCR is greater then it is categorized as unvoiced.
+	
+	:param str wavedate: Discrete Data
+ 	:param int fs: Sampling frequency
+ 	:param int chunk_size: Chunk size
+ 	:return: zero_crossing_rate_obj
+ 	:rtype: obj
+
+.. py:function:: root_mean_square(x,Chunk_Size,fs)
+
+ 	root_mean_square computes the root mean square of the blocks and is important for categorizing inflection pitch-bending samples
+
+ 	:param str x: 
+ 	:param int fs: Sampling frequency
+ 	:param int chunk_size: Chunk size
+ 	:return: rms-root
+ 	:rtype: int
+
+.. py:function:: starting_info(x,f0,fs,Chunk_Size)
+
+	starting_info specifies the voiced and unvoiced starting points.
+	It also contains the samples of the voiced and unvoiced samples.
+	It will help,mainly,to get the voiced_samples.
+
+ 	:param str x: Discrete Data
+ 	:param int f0: Fundamental frequency
+ 	:param int fs: Sampling Frequency
+ 	:param int Chunk_Size: Chunk Size
+ 	:return: voiced_unvoiced_starting_info_object- Contains object of the unvoicedStart,VoicedStart,unvoicedSamples('USamp') and voicedSamples(VSamp)
+ 	:rtype: obj_array
+
+.. py:module:: batchprocess
+
+.. py:function:: process_variables(x,fs,CHUNK_SIZE)
+
+ 	computes basic variables important for the entire process.
+
+ 	:param obj x: discrete data from the wavefile
+ 	:param int fs: Sampling frequency
+ 	:param int chunk_size: The size of block containing datas
+ 	:return: Time Stamps-This are the time stamps in secs sampled at fs
+			 Consecutive Blocks- This are consecutive blocks that are important for inflection and/or pitch bending	
+ 	:rtype: obj
+
+.. py:function:: batch_analysis(x,fs,CHUNK_SIZE)
+
+ 	computes the fundamental frequency/pitch of blocks/,voiced_samples and the rms values that are important for analysis and will be used for pre-process
+
+ 	:param obj x: discrete data from the wavefile
+ 	:param int fs: Sampling frequency
+ 	:param int chunk_size: The size of block containing datas
+ 	:return: fundamental_frequency_in_blocks- This is a fundamental frequency(or pitch) for the blocks in Chunk_Size
+					
+			voiced_samples-This are samples that contain the voiced samples.Will be usedfor the entire process and is important for the synthesis process as well.
+					
+			rms- is the root mean square computation that will be important for ategorizing inflecion/pitch bending samples.
+ 	:rtype: obj
+
+.. py:function:: batch_preprocess(fundamental_frequency_in_blocks,voiced_samples,rms)
+
+ 	This is the pre-process or pre-synthesis stage. This module computes the samples for the begining of utterances and finally computes the selected_inflect_block 
+
+ 	:param int fundamental_frequency_in_blocks: This is a fundamental frequency(or pitch) for the blocks in Chunk_Size
+ 	:param obj voiced_samples: This are samples that contain the voiced samples. 
+ 	:param obj rms: This is the root mean square computation
+ 	:return: selected_inflect_block- are the blocks that are important for the synthesis process
+ 	:rtype: obj
+
+.. py:function:: batch_synthesis(fs,CONSECUTIVE_BLOCKS,TIME_STAMPS,selected_inflect_block_new,typeOfEmotion)
+
+ 	This is the synthesis stage. This modules gives emotions of "Happy","Happy-Tensed","Sad","Afraid" for the wavefile using the process variables and selected_inflect_blocks
+
+ 	:param int fs: Sampling frequency
+ 	:param obj CONSECUTIVE_BLOCKS: 
+ 	:param obj selected_inflect_block_new:
+ 	:param str typeOfEmotion:
+ 	:return: output- Modified/Synthesised wavefile
+ 	:rtype: obj
+
+
+.. py:module:: preprocess
+
+.. py:function:: utterance_region_begin_samples(voiced_samples)
+
+ 	utterance_region_begin_samples(voiced_samples) utterance_region_begin_samples - This module help in finding the begining of voice samples and its respective index.
+
+ 	:param obj voiced_samples:
+ 	:return: voice_sample_begin-Contains array that contain the beginning voiced samples voice_sample_index-Contains array that contain the index of the voiced_sample_begin
+ 	:rtype: obj
+
+
+
+
+ 	
+
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
+
