@@ -1,4 +1,4 @@
-# Emotive Speech
+# Emotive Speech Python Package
 
 ## A Standard Python Package For Emotive Speech Generation Based on DAVID: An open-source platform for real-time emotional speech
 transformation using pysox
