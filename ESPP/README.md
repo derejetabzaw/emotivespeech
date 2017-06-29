@@ -55,7 +55,7 @@ From the terminal you can use it as:
 
 ```sh
 $ cd python_package/src
-$ python -B EmotiveSpeech /abs/path/ int(chunk_size) happy
+$ python -B EmotiveSpeech /abs/path/ int(chunk_size) typeofEmotion
 ```
 
 Example
