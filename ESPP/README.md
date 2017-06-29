@@ -20,9 +20,10 @@ Pre-Requisites
 
 Installation and Setup
 -----
-##### After fulfilling all the requirements,The Python Package of the Emotive_Speech Project can be cloned as:
+##### After fulfilling all the requirements,The Python Package of the Emotive Speech Project can be cloned as:
 ```sh
-$ git clone https://github.com/dergkat/emotivespeech.git```
+$ git clone https://github.com/dergkat/emotivespeech.git
+```
 Basic Usage
 ===========
 ##### An Example of the Package can be seen below:
