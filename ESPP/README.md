@@ -34,22 +34,16 @@ Open `EmotiveSpeech.py`, the Caller Function
 ```python
 
 FILE_NAME_PATH = "/specify/abs/path/for/the/wavefile"
-
-CHUNK_SIZE = 1024
-	  """2048"""
-	  """4096"""
+CHUNK_SIZE = 1024	  
 typeOfEmotion = "happy"
-		""""sad""""
-		""""afraid""""
-		""""happy_tensed""""
+		
+		
+		
 
 def emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion):
 	
 	"""
-	emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion)
-	A Caller Module
-		Parameter:FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion
-		Returns: output
+	#Computation is done here
 	"""
 	return output
 
@@ -70,13 +64,15 @@ Example
 $ cd python_package/src
 $ python -B EmotiveSpeech /home/user/Desktop/TestFolder/Test.wav 1024 sad
 ```
-Arguments
------
+#### Arguments
+
 ```sh
 $ python -B EmotiveSpeech.py arg1 arg2 arg3
 ```
 arg1: Absolute Path For Wavefile
+
 arg2: Chunk_Size(256,512,1024,2048,4096...)
+
 arg3: TypeofEmotion: (happy,sad,afraid,happy_tensed) 
 
 
