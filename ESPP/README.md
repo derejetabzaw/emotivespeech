@@ -36,17 +36,10 @@ Basic Usage
 FILE_NAME_PATH = "/specify/abs/path/for/the/wavefile"
 CHUNK_SIZE = 1024	  
 typeOfEmotion = "happy"
-		
-		
-		
 
 def emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion):
-	
-	"""
 	#Computation is done here
-	"""
 	return output
-
 if __name__ == '__main__':	
 	emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion)
 ```
