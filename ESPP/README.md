@@ -1,6 +1,6 @@
-# Emotive Speech
+# Emotive Speech Python Package
 
-A Standard Python Package For Emotive Speech Generation Based on DAVID: An open-source platform for real-time emotional speech
+## A Standard Python Package For Emotive Speech Generation Based on DAVID: An open-source platform for real-time emotional speech
 transformation using pysox
 
 Pre-Requisites
@@ -18,66 +18,44 @@ Pre-Requisites
 > we will be using the Transformers (sox.transform.Transformers) for synthesis.
 > http://pysox.readthedocs.io/en/latest/api.html | sudo apt-get install pysox
 
-
-
 Installation and Setup
 -----
-After fulfilling all the requirements,The Python Package of the Emotive_Speech Project can be cloned as:
+##### After fulfilling all the requirements,The Python Package of the Emotive Speech Project can be cloned as:
 ```sh
-$ git clone https://github.com/dergkat/emotivespeech/tree/python_package
+$ git clone https://github.com/dergkat/emotivespeech.git
 ```
 Basic Usage
 ===========
-An Example of the Package can be seen below:
-Open `EmotiveSpeech.py`, the Caller Function
-
+##### An Example of the Package can be seen below:
+##### Open `EmotiveSpeech.py`, the Caller Function
 ```python
-
 FILE_NAME_PATH = "/specify/abs/path/for/the/wavefile"
-
-CHUNK_SIZE = 1024
-	  """2048"""
-	  """4096"""
+CHUNK_SIZE = 1024	  
 typeOfEmotion = "happy"
-		""""sad""""
-		""""afraid""""
-		""""happy_tensed""""
-
 def emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion):
-	
-	"""
-	emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion)
-	A Caller Module
-		Parameter:FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion
-		Returns: output
-	"""
+	#Computation is done here
 	return output
-
 if __name__ == '__main__':	
 	emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion)
 ```
-OR,
-From the terminal you can use it as:
-
+##### OR:From the terminal you can use it as:
 ```sh
 $ cd python_package/src
-$ python -B EmotiveSpeech /abs/path/ int(chunk_size) happy
+$ python -B EmotiveSpeech /abs/path/ int(chunk_size) typeofEmotion
 ```
-
 Example
 -----
 ```sh
 $ cd python_package/src
 $ python -B EmotiveSpeech /home/user/Desktop/TestFolder/Test.wav 1024 sad
 ```
-Arguments
------
+#### Arguments
 ```sh
 $ python -B EmotiveSpeech.py arg1 arg2 arg3
 ```
-arg1: Absolute Path For Wavefile
-arg2: Chunk_Size(256,512,1024,2048,4096...)
-arg3: TypeofEmotion: (happy,sad,afraid,happy_tensed) 
+###### arg1: Absolute Path For Wavefile
+###### arg2: Chunk_Size(256,512,1024,2048,4096...)
+###### arg3: TypeofEmotion: (happy,sad,afraid,happy_tensed) 
 
 
 
