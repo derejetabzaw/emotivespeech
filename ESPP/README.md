@@ -24,38 +24,30 @@ Installation and Setup
 ```sh
 $ git clone https://github.com/dergkat/emotivespeech.git
 ```
-Basic Usage
+Usage
 ===========
-##### An Example of the Package can be seen below:
-##### Open `EmotiveSpeech.py`, the Caller Function
-```python
-FILE_NAME_PATH = "/specify/abs/path/for/the/wavefile"
-CHUNK_SIZE = 1024	  
-typeOfEmotion = "happy"
-def emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion):
-	#Computation is done here
-	return output
-if __name__ == '__main__':	
-	emotive_speech(FILE_NAME_PATH,CHUNK_SIZE,typeOfEmotion)
-```
-##### OR:From the terminal you can use it as:
+##### 
 ```sh
 $ cd python_package/src
-$ python -B EmotiveSpeech /abs/path/ int(chunk_size) typeofEmotion
+$ python -B EmotiveSpeech 
+usage: emotivespeech.py [-h] [-c chunk_size] [-s semitones] [-r cutfreq]
+                        [-g gain] [-q qfactor] [-v speed] [-d depth]
+                        [-o tempo] [-i intensity] [-p parameter_control]
+                        filename typeOfEmotion
+
 ```
 Example
 -----
 ```sh
-$ cd python_package/src
-$ python -B EmotiveSpeech /home/user/Desktop/TestFolder/Test.wav 1024 sad
+
+$ python -B emotivespeech.py /home/user/Desktop/TestFolder/Test.wav sad
 ```
 #### Arguments
 ```sh
-$ python -B EmotiveSpeech.py arg1 arg2 arg3
+$ python -B EmotiveSpeech.py arg1 arg2
 ```
-###### arg1: Absolute Path For Wavefile
-###### arg2: Chunk_Size(256,512,1024,2048,4096...)
-###### arg3: TypeofEmotion: (happy,sad,afraid,happy_tensed) 
+###### arg1(Positional Argument): Absolute Path For Wavefile
+###### arg2(Positional Argument): TypeofEmotion: (happy,sad,afraid,happy_tensed) 
 
 
 
