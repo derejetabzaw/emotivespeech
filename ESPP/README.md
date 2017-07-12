@@ -28,7 +28,7 @@ Usage
 ===========
 ##### 
 ```sh
-$ cd python_package/src
+$ cd ESPP/src
 $ python -B EmotiveSpeech 
 usage: emotivespeech.py [-h] [-c chunk_size] [-s semitones] [-r cutfreq]
                         [-g gain] [-q qfactor] [-v speed] [-d depth]
