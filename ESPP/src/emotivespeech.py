@@ -65,7 +65,7 @@ if __name__ == '__main__':
     parser.add_argument('-s',
         metavar='semitones',
         type=float,
-        default=1.5,
+        default=1.0,
         help='''Semitones
         Default Values(H=1.5,HT=2.0,S=-1.5)
         '''
@@ -136,6 +136,21 @@ if __name__ == '__main__':
         default=1.0,
         help='Parameter Control')
    
+    typeOfEmotion = parser.parse_args().typeOfEmotion
+    if typeOfEmotion=='happy':
+        parser.set_defaults(s=1.5) # Semitones
+        parser.set_defaults(o=1.1) # Tempo
+    if typeOfEmotion=='sad':
+        parser.set_defaults(s=-1.5)
+        parser.set_defaults(g=0.25) # Gain
+        parser.set_defaults(r=3500) # CutFrequency
+        parser.set_defaults(o=0.95)
+    if typeOfEmotion=='happy_tensed':
+        parser.set_defaults(s=2.0)
+        parser.set_defaults(o=1.18)
+    if typeOfEmotion=='afraid':
+        parser.set_defaults(o=1.05)
+    
     args = parser.parse_args()
        
     fname = args.f
@@ -155,6 +170,12 @@ if __name__ == '__main__':
     tempo = args.o
     intensity = args.i
     parameter_control = args.p
+   
+    profile = '{}/{}'.format(output_dir, os.path.basename('profile.txt'))
+    file = open(profile,'w') 
+    file.write("Args-->  " + '\n' + str(args) + '\n' + '\n' +  "See `python emotivespeech.py -h` for help  ")
+    file.close()
+
     emotive_speech(
          fname,ofile,chunk_size,typeOfEmotion,
          semitones,gain,qfactor,speed,
