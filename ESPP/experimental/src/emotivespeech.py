@@ -31,7 +31,7 @@ def emotive_speech(
     return output
 
 if __name__ == '__main__':
-    import timeit
+    
     parser = argparse.ArgumentParser(description='Emotive Speech Generation', 
         formatter_class=argparse.RawTextHelpFormatter)
    
@@ -171,4 +171,4 @@ if __name__ == '__main__':
          fname,ofile,chunk_size,typeOfEmotion,
          semitones,gain,qfactor,speed,
          depth,tempo,intensity,parameter_control)
-    print time.clock() - start_time,"seconds"
+    
