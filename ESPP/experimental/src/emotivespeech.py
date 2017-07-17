@@ -13,12 +13,22 @@ def emotive_speech(
         depth,tempo,intensity,parameter_control):
         
     """
-    emotive_speech(fname, ofile, chunk_size, typeOfEmotion)
+    emotive_speech(fname, ofile, chunk_size, 
+    typeOfEmotion,semitones,gain,qfactor,speed,
+    depth,tempo,intensity,parameter_control)
     A Caller Module
     Parameter:  fname
                 ofile
                 chunk_size
                 typeOfEmotion
+                semitones
+                gain
+                qfactor
+                speed
+                depth
+                tempo
+                intensity
+                parameter_control
     Returns: output
     """
     fs, x = prep.wave_file_read(fname)    
