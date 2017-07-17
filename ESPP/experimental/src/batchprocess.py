@@ -95,17 +95,28 @@ def batch_synthesis(
                 intensity,
                 parameter_control):
     """
-    batch_synthesis(fs,consecutive_blocks,time_stamps,selected_inflect_block_new,typeOfEmotion)
+    batch_synthesis(fs,time_stamps,typeOfEmotion,semitones,
+                cutfreq,gain,qfactor,speed,
+                depth,tempo,intensity,parameter_control)
 
                     This is the synthesis stage. This modules gives emotions of
                     "Happy","Happy-Tensed","Sad","Afraid" for the wavefile using
                     the process variables and selected_inflect_blocks
 
-            Parameters: fs
-                                    consecutive_blocks
-                                    time_stamps
-                                    selected_inflect_block_new
-                                    typeOfEmotion
+            Parameters: 
+                        Sampling Frequency
+                        Time Stamps
+                        Type Of Emotion
+                        Semitones
+                        Cutfreq
+                        Gain
+                        Q-factor
+                        Speed
+                        Depth
+                        Tempo
+                        Intensity
+                        Parameter_control
+            
             Returns: 	output- Modified/Synthesised wavefile
     """
 
