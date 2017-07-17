@@ -235,14 +235,25 @@ def happy_patch(
     intensity=3.0,
     parameter_control=1):
     """
-    happy_patch(sampleFrequency,utterance_begin)
+    happy_patch(sampleFrequency,semitones,
+                cutfreq,gain,qfactor,tempo,
+                intensity,parameter_control)
                     The module helps to synthesis the "Happy" Emotion
                     using the picth shift, picth bend(inflection) and filtering
 
-            Parameter: sampleFrequency
-                               utterance_begin
+            Parameter: 
+                sampleFrequency
+                semitones
+                cutfreq
+                gain
+                qfactor
+                tempo
+                intensity
+                parameter_control
+                               
 
-            Return:	   happy_patch
+            Return:	   
+                happy_patch
 
     See: appended_utterance_time_stamps(consecutive_blocks,time_stamps,selected_inflect_block)
     """
@@ -265,14 +276,22 @@ def happy_tensed_patch(
     intensity=3.0,
     parameter_control=1):
     """
-    happy_tensed_patch(sampleFrequency,utterance_begin)
+    happy_tensed_patch(sampleFrequency,semitones,cutfreq,gain,qfactor,tempo,intensity,parameter_control)
                     The module helps to synthesis the "Happy_Tensed" Emotion
                     using the picth shift, picth bend(inflection) and filtering
 
-            Parameter: sampleFrequency
-                               utterance_begin
+            Parameter: 
+                    sampleFrequency
+                    semitones
+                    cutfreq
+                    gain
+                    qfactor
+                    tempo
+                    intensity
+                    parameter_control
 
-            Return:	   happy_tensed_patch
+            Return:	   
+                    happy_tensed_patch
 
     See: appended_utterance_time_stamps(consecutive_blocks,time_stamps,selected_inflect_block)
 
@@ -293,13 +312,19 @@ def sad_patch(
     tempo=0.95,
     parameter_control=1):
     """
-    sad_patch(sampleFrequency,utterance_begin)
+    sad_patch(sampleFrequency,semitones,cutfreq,gain,tempo,parameter_control)
                     The module helps to synthesis the "Sad" Emotion
                     using the picth shift and through filtering
 
-            Parameter: sampleFrequency
+            Parameter: 
+                    sampleFrequency
+                    semitones
+                    cutfreq
+                    gain
+                    tempo
+                    parameter_control
 
-            Return:	   sad_patch
+            Return:	sad_patch
     """
     semitones = semitones * parameter_control
     sad_patch = sad_sox_init(
@@ -316,14 +341,20 @@ def afraid_patch(
     intensity=1.1,
     parameter_control=1):
     """
-    afraid_patch(sampleFrequency,utterance_begin)
+    afraid_patch(sampleFrequency,speed,depth,tempo,intensity,parameter_control)
                     The module helps to synthesis the "Afraid" Emotion
                     using the picth bend(inflection) and tremelo
 
-            Parameter: sampleFrequency
-                               utterance_begin
+            Parameter: 
+                        sampleFrequency          
+                        speed
+                        depth
+                        tempo
+                        intensity
+                        parameter_control                    
 
-            Return:	   afraid_patch
+            Return:	   
+                        afraid_patch
 
     See: appended_utterance_time_stamps(consecutive_blocks,time_stamps,selected_inflect_block)
 
