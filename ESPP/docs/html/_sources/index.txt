@@ -1,26 +1,63 @@
-.. EmoTrans documentation master file, created by
+.. Emotive Speech documentation master file, created by
    specifieshinx-quickstart on Fri Jun 23 11:42:21 2017.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to EmoTrans's documentation!
+Welcome to Emotive Speech's documentation!
 ====================================
 
-Contents:
+A Standard Python Package For Emotive Speech Generation Based on `DAVID <http://cream.ircam.fr/?p=44>`_ : An open-source platform for real-time emotional speech
+
+Pre-Requisites
+====================
+
+**pysptk**
+A python wrapper for Speech Signal Processing Toolkit (SPTK)
+
+Click `this <https://github.com/r9y9/pysptk>`_ link or ``sudo pip install pysptk``
+
+**Basic Signal Processing Tools**
+
+* Scipy,Numpy
+* Make Sure scipy.io- dedicated wavefile read/write library- is also installed
+
+**pysox**
+A Python library that provides a simple interface between Python and SoX.
+We will be using the Transformers (sox.transform.Transformers) for synthesis.
+Check `this <http://pysox.readthedocs.io/en/latest/api.html>`_ | ``sudo apt-get install pysox``
+
+
+**Installation and Setup**
+
+*After fulfilling all the requirements,The Python Package of the Emotive Speech Project can be cloned as:*
+
+``$ git clone https://github.com/dergkat/emotivespeech.git``
+
 
 .. toctree::
    :maxdepth: 2
 
+Modules and Functions
+============================
+
 .. py:module:: EmotiveSpeech
 
-.. py:function:: emotive_speech(fname, ofile, chunk_size, typeOfEmotion)
+.. py:function:: emotive_speech(fname,ofile,chunk_size,typeOfEmotion,semitones,gain,qfactor,speed,depth,tempo,intensity,parameter_control)
 
    A caller module
 
    :param str fname: input file path
+   :param str ofile: output file path
+   :param int chunk_size:
    :param str typeOfEmotion: The type of selected emotion
-   :param str ofil: output file path
-   :param int chunk_size
+   :param float semitone: 
+   :param float gain:
+   :param int qfactor:
+   :param float speed:
+   :param float depth:
+   :param float tempo:
+   :param float intensity:
+   :param float parameter_control:
    :return: output
    :rtype: object
 
@@ -44,7 +81,8 @@ Contents:
 	It is important in classifying/detecting the voiced and unvoiced region.
 	If the ZCR is smaller then it is categorized as voiced.
 	If the ZCR is greater then it is categorized as unvoiced.
-	See:https://www.asee.org/documents/zones/zone1/2008/student/ASEE12008_0044_paper.pdf
+	Click: `this <https://www.asee.org/documents/zones/zone1/2008/student/ASEE12008_0044_paper.pdf>`_ for more info
+		
 	
 	:param str wavedate: Discrete Data
  	:param int fs: Sampling frequency
@@ -118,23 +156,23 @@ Contents:
 
  	This is the synthesis stage. This modules gives emotions of "Happy","Happy-Tensed","Sad","Afraid" for the wavefile using the process variables and selected_inflect_blocks
 
- 	:param int fs: Sampling frequency
- 	:param obj consecutive_blocks: 
- 	:param obj time_stamps:
- 	:param obj selected_inflect_block_new:
- 	:param str typeOfEmotion:
- 	:param obj semitones:
+    
+    :param int fs: Sampling frequency
+    :param obj consecutive_blocks: 
+    :param obj time_stamps:
+    :param obj selected_inflect_block_new:
+    :param str typeOfEmotion:
+    :param float semitones:
     :param int cutfreq:
-    :param int gain:
+    :param float gain:
     :param int qfactor:
-    :param int speed:
-    :param int depth:
-    :param int tempo:
-    :param int intensity:
+    :param float speed:
+    :param float depth:
+    :param float tempo:
+    :param float intensity:
     :param float parameter_control:
- 	:return: output- Modified/Synthesised wavefile
- 	:rtype: obj
-
+    :return: output- Modified/Synthesised wavefile
+    :rtype: obj
 
 .. py:module:: preprocess
 
@@ -148,7 +186,9 @@ Contents:
 
 .. py:function:: utterance_chunk(voiced_samples,voice_sample_index)
 
- 	utterance_chunk:is a module used to get the voiced_chunk_samples. The voiced_chunk_samples contain voice samples that are bundled together Eg. [1,2][6,7,8,9,10][34,35,36],[45,46,47,48] This wavefile has Four Utterance Chunks The voiced and unvoiced samples currently use zero crossing rate(zcr) to classify regions.
+ 	utterance_chunk:is a module used to get the voiced_chunk_samples. The voiced_chunk_samples contain voice samples that are bundled together.
+
+ 	Eg. [1,2][6,7,8,9,10][34,35,36],[45,46,47,48] This wavefile has Four Utterance Chunks The voiced and unvoiced samples currently use zero crossing rate(zcr) to classify regions.
 
  	:param obj voiced_samples:
  	:param int voice_sample_index:
@@ -172,6 +212,8 @@ Contents:
  	:return: inflect samples
  	:rtype: obj
 
+.. _selected_inflect_block_new:
+
 .. py:function:: selected_inflect_block_new(inflection_sample_numbers)
 
  	This module is used for computing the selected inflect blocks 
@@ -182,9 +224,14 @@ Contents:
 
 .. py:module:: synthesis
 
+
+.. _appended_utterance_time_stamps:
+
 .. py:function:: appended_utterance_time_stamps(consecutive_blocks, time_stamps, selected_inflect_block)
 
- 	This is appended time stamps for particular utterances. It is important for the synthesis process. It is time stamps of the utternace region we have got from the selected_infect_block. See: selected_inflect_block_new(inflection_sample_numbers)
+ 	This is appended time stamps for particular utterances. It is important for the synthesis process. It is time stamps of the utternace region we have got from the selected_infect_block. 
+	
+	See: selected_inflect_block_new_.
 
  	:param int consecutive_blocks:
  	:param obj time_stamps:
@@ -192,17 +239,21 @@ Contents:
  	:return: utterance_time_stamps
  	:rtype: obj
 
+.. _happy_inflection_function:
+
 .. py:function:: happy_inflection_function(normalized_time_stamps)
 
- 	This module is a function that accepts time stamps and outputs a cent. The function is made using polynomial fit with a 4th-Degree polynomial. The particular seconds and the corresponding cents are provided from the D.A.V.I.D Windows platform. See: You can download the application on windows It is an open source    https://cycling74.com/downloads/older/
+ 	This module is a function that accepts time stamps and outputs a cent. The function is made using polynomial fit with a 4th-Degree polynomial. The particular seconds and the corresponding cents are provided from the D.A.V.I.D Windows platform. You can download the application on windows It is an open source Follow `this <https://cycling74.com/downloads/older/>`_ link
 
  	:param obj normalized_time_stamps:
  	:return: cents- These are helpful in creating inflections
  	:rtype: obj
 
+.. _afraid_inflection_function:
+
 .. py:function:: afraid_inflection_function(normalized_time_stamps)
 
- 	See: happy_inflection_function(normalized_time_stamps)
+ 	See: happy_inflection_function_.
 
  	:param obj normalized_time_stamps:
  	:return: cents- These are helpful in creating inflections for afraid_patch
@@ -210,7 +261,9 @@ Contents:
 
 .. py:function:: happy_tensed_inflection_function(normalized_time_stamps)
 
- 	same as happy_inflection_function(normalized_time_stamps) except for specification for the 4th Degree polynomial fitting. See: happy_inflection_function(normalized_time_stamps)
+ 	same as happy_inflection_function(normalized_time_stamps) except for specification for the 4th Degree polynomial fitting. 
+ 	
+ 	See: happy_inflection_function_.
 
  	:param obj normalized_time_stamps:
  	:return: cents- These are helpful in creating inflections
@@ -218,7 +271,9 @@ Contents:
 
 .. py:function:: normalize_function(utterance_time_stamps)
 
- 	This module normalizes the utterance time-stamps within the bounded time range of the total inflect duration(500ms/0.5s).  See: appended_utterance_time_stamps(CONSECUTIVE_BLOCKS,TIME_STAMPS,selected_inflect_block)
+ 	This module normalizes the utterance time-stamps within the bounded time range of the total inflect duration(500ms/0.5s). 
+	
+	See: appended_utterance_time_stamps_.
 
  	:param obj utterance_time_stamps:
  	:return: normalized_utterance
@@ -227,7 +282,9 @@ Contents:
 
 .. py:function:: happy_patch(sampleFrequency,utterance_begin)
 
- 	The module helps to synthesis the "Happy" Emotion using the picth shift, picth bend(inflection) and filtering.  See: appended_utterance_time_stamps(CONSECUTIVE_BLOCKS,TIME_STAMPS,selected_inflect_block)
+ 	The module helps to synthesis the "Happy" Emotion using the picth shift, picth bend(inflection) and filtering. 
+ 	
+ 	See: appended_utterance_time_stamps_.
 
  	:param int sampleFrequency:
  	:param obj utterance_begin:
@@ -236,7 +293,9 @@ Contents:
 
 .. py:function:: happy_tensed_patch(sampleFrequency,utterance_begin)
 
- 	The module helps to synthesis the "Happy_Tensed" Emotion using the picth shift, picth bend(inflection) and filtering.   See: appended_utterance_time_stamps(CONSECUTIVE_BLOCKS,TIME_STAMPS,selected_inflect_block)
+ 	The module helps to synthesis the "Happy_Tensed" Emotion using the picth shift, picth bend(inflection) and filtering.   
+ 	
+ 	See: appended_utterance_time_stamps_.
 
  	:param int sampleFrequency:
  	:param obj utterance_begin:
@@ -254,16 +313,43 @@ Contents:
 
 .. py:function:: afraid_patch(sampleFrequency,utterance_begin)
 
- 	The module helps to synthesis the "Afraid" Emotion using the picth bend(inflection) and tremelo.   See: appended_utterance_time_stamps(consecutive_blocks,time_stamps,selected_inflect_block)
+ 	The module helps to synthesis the "Afraid" Emotion using the picth bend(inflection) and tremelo.   
+ 	
+ 	See: appended_utterance_time_stamps_.
 
  	:param int sampleFrequency:
  	:param obj utterance_begin:
  	:return: afraid_patch
  	:rtype: obj
 
+.. py:module:: Example
 
-	
-	
+Usage and Examples
+==================
+
+Usage
+##########
+
+
+``$ cd ESPP/src``
+
+``$ python -B EmotiveSpeech``
+
+to get help: emotivespeech.py [-h]
+
+
+
+Example
+###########
+
+``$ python -B emotivespeech.py /home/user/Desktop/TestFolder/Test.wav sad``
+
+``$ python -B EmotiveSpeech.py arg1 arg2``
+
+* arg1(Positional Argument): Absolute Path For Wavefile
+* arg2(Positional Argument): TypeofEmotion: (happy,sad,afraid,happy_tensed) 
+
+Testing files are available `here <https://github.com/dergkat/emotivespeech/tree/master/ESPP/examples/files>`_
 
 
 

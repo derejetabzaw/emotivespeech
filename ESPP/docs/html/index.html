@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to EmoTrans’s documentation! &mdash; EmoTrans 1.1.0 documentation</title>
+    <title>Welcome to Emotive Speech’s documentation! &mdash; Emotive Speech 1.1.0 documentation</title>
     
     <link rel="stylesheet" href="_static/default.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,7 +24,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <link rel="top" title="EmoTrans 1.1.0 documentation" href="#" /> 
+    <link rel="top" title="Emotive Speech 1.1.0 documentation" href="#" /> 
   </head>
   <body>
     <div class="related">
@@ -36,7 +36,7 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="#">EmoTrans 1.1.0 documentation</a> &raquo;</li> 
+        <li><a href="#">Emotive Speech 1.1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -45,33 +45,66 @@
         <div class="bodywrapper">
           <div class="body">
             
-  <div class="section" id="welcome-to-emotrans-s-documentation">
-<h1>Welcome to EmoTrans&#8217;s documentation!<a class="headerlink" href="#welcome-to-emotrans-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
+  <div class="section" id="welcome-to-emotive-speech-s-documentation">
+<h1>Welcome to Emotive Speech&#8217;s documentation!<a class="headerlink" href="#welcome-to-emotive-speech-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>A Standard Python Package For Emotive Speech Generation Based on <a class="reference external" href="http://cream.ircam.fr/?p=44">DAVID</a> : An open-source platform for real-time emotional speech</p>
+</div>
+<div class="section" id="pre-requisites">
+<h1>Pre-Requisites<a class="headerlink" href="#pre-requisites" title="Permalink to this headline">¶</a></h1>
+<p><strong>pysptk</strong>
+A python wrapper for Speech Signal Processing Toolkit (SPTK)</p>
+<p>Click <a class="reference external" href="https://github.com/r9y9/pysptk">this</a> link or <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pysptk</span></tt></p>
+<p><strong>Basic Signal Processing Tools</strong></p>
+<ul class="simple">
+<li>Scipy,Numpy</li>
+<li>Make Sure scipy.io- dedicated wavefile read/write library- is also installed</li>
+</ul>
+<p><strong>pysox</strong>
+A Python library that provides a simple interface between Python and SoX.
+We will be using the Transformers (sox.transform.Transformers) for synthesis.
+Check <a class="reference external" href="http://pysox.readthedocs.io/en/latest/api.html">this</a> | <tt class="docutils literal"><span class="pre">sudo</span> <span class="pre">apt-get</span> <span class="pre">install</span> <span class="pre">pysox</span></tt></p>
+<p><strong>Installation and Setup</strong></p>
+<p><em>After fulfilling all the requirements,The Python Package of the Emotive Speech Project can be cloned as:</em></p>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/dergkat/emotivespeech.git</span></tt></p>
 <div class="toctree-wrapper compound">
 <ul class="simple">
 </ul>
 </div>
-<span class="target" id="module-EmotiveSpeech"></span><dl class="function">
+</div>
+<div class="section" id="module-EmotiveSpeech">
+<span id="modules-and-functions"></span><h1>Modules and Functions<a class="headerlink" href="#module-EmotiveSpeech" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
 <dt id="EmotiveSpeech.emotive_speech">
-<tt class="descclassname">EmotiveSpeech.</tt><tt class="descname">emotive_speech</tt><big>(</big><em>fname</em>, <em>ofile</em>, <em>chunk_size</em>, <em>typeOfEmotion</em><big>)</big><a class="headerlink" href="#EmotiveSpeech.emotive_speech" title="Permalink to this definition">¶</a></dt>
+<tt class="descclassname">EmotiveSpeech.</tt><tt class="descname">emotive_speech</tt><big>(</big><em>fname</em>, <em>ofile</em>, <em>chunk_size</em>, <em>typeOfEmotion</em>, <em>semitones</em>, <em>gain</em>, <em>qfactor</em>, <em>speed</em>, <em>depth</em>, <em>tempo</em>, <em>intensity</em>, <em>parameter_control</em><big>)</big><a class="headerlink" href="#EmotiveSpeech.emotive_speech" title="Permalink to this definition">¶</a></dt>
 <dd><p>A caller module</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>fname</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; input file path</li>
+<li><strong>ofile</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; output file path</li>
+<li><strong>chunk_size</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
 <li><strong>typeOfEmotion</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; The type of selected emotion</li>
-<li><strong>ofil</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; output file path</li>
+<li><strong>semitone</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>gain</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>qfactor</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
+<li><strong>speed</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>tempo</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>intensity</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>parameter_control</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">output</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">object</p>
 </td>
 </tr>
 </tbody>
 </table>
-<p>:param int chunk_size
-:return: output
-:rtype: object</p>
 </dd></dl>
 
 <span class="target" id="module-analysis"></span><dl class="function">
@@ -106,7 +139,7 @@
 It is important in classifying/detecting the voiced and unvoiced region.
 If the ZCR is smaller then it is categorized as voiced.
 If the ZCR is greater then it is categorized as unvoiced.
-See:https://www.asee.org/documents/zones/zone1/2008/student/ASEE12008_0044_paper.pdf</p>
+Click: <a class="reference external" href="https://www.asee.org/documents/zones/zone1/2008/student/ASEE12008_0044_paper.pdf">this</a> for more info</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -264,55 +297,33 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 <dt id="batchprocess.batch_synthesis">
 <tt class="descclassname">batchprocess.</tt><tt class="descname">batch_synthesis</tt><big>(</big><em>fs</em>, <em>consecutive_blocks</em>, <em>time_stamps</em>, <em>selected_inflect_block_new</em>, <em>typeOfEmotion</em>, <em>semitones</em>, <em>cutfreq</em>, <em>gain</em>, <em>qfactor</em>, <em>speed</em>, <em>depth</em>, <em>tempo</em>, <em>intensity</em>, <em>parameter_control</em><big>)</big><a class="headerlink" href="#batchprocess.batch_synthesis" title="Permalink to this definition">¶</a></dt>
 <dd><blockquote>
-<div><p>This is the synthesis stage. This modules gives emotions of &#8220;Happy&#8221;,&#8221;Happy-Tensed&#8221;,&#8221;Sad&#8221;,&#8221;Afraid&#8221; for the wavefile using the process variables and selected_inflect_blocks</p>
+<div>This is the synthesis stage. This modules gives emotions of &#8220;Happy&#8221;,&#8221;Happy-Tensed&#8221;,&#8221;Sad&#8221;,&#8221;Afraid&#8221; for the wavefile using the process variables and selected_inflect_blocks</div></blockquote>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">param int fs:</th><td class="field-body">Sampling frequency</td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param obj consecutive_blocks:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">param obj time_stamps:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param obj selected_inflect_block_new:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-odd field"><th class="field-name" colspan="2">param str typeOfEmotion:</th></tr>
-<tr class="field-odd field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-<tr class="field-even field"><th class="field-name" colspan="2">param obj semitones:</th></tr>
-<tr class="field-even field"><td>&nbsp;</td><td class="field-body"></td>
-</tr>
-</tbody>
-</table>
-</div></blockquote>
-<table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fs</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; Sampling frequency</li>
+<li><strong>consecutive_blocks</strong> (<em>obj</em>) &#8211; </li>
+<li><strong>time_stamps</strong> (<em>obj</em>) &#8211; </li>
+<li><strong>selected_inflect_block_new</strong> (<em>obj</em>) &#8211; </li>
+<li><strong>typeOfEmotion</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; </li>
+<li><strong>semitones</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
 <li><strong>cutfreq</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
-<li><strong>gain</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
+<li><strong>gain</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
 <li><strong>qfactor</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
-<li><strong>speed</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
-<li><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
-<li><strong>tempo</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
-<li><strong>intensity</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#int" title="(in Python v2.7)"><em>int</em></a>) &#8211; </li>
-<li><strong>parameter_control</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; <table class="docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">return:</th><td class="field-body">output- Modified/Synthesised wavefile</td>
-</tr>
-<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">obj</td>
-</tr>
-</tbody>
-</table>
-</li>
+<li><strong>speed</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>depth</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>tempo</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>intensity</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
+<li><strong>parameter_control</strong> (<a class="reference external" href="https://docs.python.org/library/functions.html#float" title="(in Python v2.7)"><em>float</em></a>) &#8211; </li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">output- Modified/Synthesised wavefile</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">obj</p>
 </td>
 </tr>
 </tbody>
@@ -340,7 +351,8 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 <dl class="function">
 <dt id="preprocess.utterance_chunk">
 <tt class="descclassname">preprocess.</tt><tt class="descname">utterance_chunk</tt><big>(</big><em>voiced_samples</em>, <em>voice_sample_index</em><big>)</big><a class="headerlink" href="#preprocess.utterance_chunk" title="Permalink to this definition">¶</a></dt>
-<dd><p>utterance_chunk:is a module used to get the voiced_chunk_samples. The voiced_chunk_samples contain voice samples that are bundled together Eg. [1,2][6,7,8,9,10][34,35,36],[45,46,47,48] This wavefile has Four Utterance Chunks The voiced and unvoiced samples currently use zero crossing rate(zcr) to classify regions.</p>
+<dd><p>utterance_chunk:is a module used to get the voiced_chunk_samples. The voiced_chunk_samples contain voice samples that are bundled together.</p>
+<p>Eg. [1,2][6,7,8,9,10][34,35,36],[45,46,47,48] This wavefile has Four Utterance Chunks The voiced and unvoiced samples currently use zero crossing rate(zcr) to classify regions.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -402,7 +414,7 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 </table>
 </dd></dl>
 
-<dl class="function">
+<span class="target" id="selected-inflect-block-new"></span><dl class="function">
 <dt id="preprocess.selected_inflect_block_new">
 <tt class="descclassname">preprocess.</tt><tt class="descname">selected_inflect_block_new</tt><big>(</big><em>inflection_sample_numbers</em><big>)</big><a class="headerlink" href="#preprocess.selected_inflect_block_new" title="Permalink to this definition">¶</a></dt>
 <dd><p>This module is used for computing the selected inflect blocks</p>
@@ -420,10 +432,11 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 </table>
 </dd></dl>
 
-<span class="target" id="module-synthesis"></span><dl class="function">
+<span class="target" id="module-synthesis"></span><span class="target" id="appended-utterance-time-stamps"></span><dl class="function">
 <dt id="synthesis.appended_utterance_time_stamps">
 <tt class="descclassname">synthesis.</tt><tt class="descname">appended_utterance_time_stamps</tt><big>(</big><em>consecutive_blocks</em>, <em>time_stamps</em>, <em>selected_inflect_block</em><big>)</big><a class="headerlink" href="#synthesis.appended_utterance_time_stamps" title="Permalink to this definition">¶</a></dt>
-<dd><p>This is appended time stamps for particular utterances. It is important for the synthesis process. It is time stamps of the utternace region we have got from the selected_infect_block. See: selected_inflect_block_new(inflection_sample_numbers)</p>
+<dd><p>This is appended time stamps for particular utterances. It is important for the synthesis process. It is time stamps of the utternace region we have got from the selected_infect_block.</p>
+<p>See: <a class="reference internal" href="#selected-inflect-block-new">selected_inflect_block_new</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -445,10 +458,10 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 </table>
 </dd></dl>
 
-<dl class="function">
+<span class="target" id="happy-inflection-function"></span><dl class="function">
 <dt id="synthesis.happy_inflection_function">
 <tt class="descclassname">synthesis.</tt><tt class="descname">happy_inflection_function</tt><big>(</big><em>normalized_time_stamps</em><big>)</big><a class="headerlink" href="#synthesis.happy_inflection_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>This module is a function that accepts time stamps and outputs a cent. The function is made using polynomial fit with a 4th-Degree polynomial. The particular seconds and the corresponding cents are provided from the D.A.V.I.D Windows platform. See: You can download the application on windows It is an open source    <a class="reference external" href="https://cycling74.com/downloads/older/">https://cycling74.com/downloads/older/</a></p>
+<dd><p>This module is a function that accepts time stamps and outputs a cent. The function is made using polynomial fit with a 4th-Degree polynomial. The particular seconds and the corresponding cents are provided from the D.A.V.I.D Windows platform. You can download the application on windows It is an open source Follow <a class="reference external" href="https://cycling74.com/downloads/older/">this</a> link</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -463,10 +476,10 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 </table>
 </dd></dl>
 
-<dl class="function">
+<span class="target" id="afraid-inflection-function"></span><dl class="function">
 <dt id="synthesis.afraid_inflection_function">
 <tt class="descclassname">synthesis.</tt><tt class="descname">afraid_inflection_function</tt><big>(</big><em>normalized_time_stamps</em><big>)</big><a class="headerlink" href="#synthesis.afraid_inflection_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>See: happy_inflection_function(normalized_time_stamps)</p>
+<dd><p>See: <a class="reference internal" href="#happy-inflection-function">happy_inflection_function</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -484,7 +497,8 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 <dl class="function">
 <dt id="synthesis.happy_tensed_inflection_function">
 <tt class="descclassname">synthesis.</tt><tt class="descname">happy_tensed_inflection_function</tt><big>(</big><em>normalized_time_stamps</em><big>)</big><a class="headerlink" href="#synthesis.happy_tensed_inflection_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>same as happy_inflection_function(normalized_time_stamps) except for specification for the 4th Degree polynomial fitting. See: happy_inflection_function(normalized_time_stamps)</p>
+<dd><p>same as happy_inflection_function(normalized_time_stamps) except for specification for the 4th Degree polynomial fitting.</p>
+<p>See: <a class="reference internal" href="#happy-inflection-function">happy_inflection_function</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -502,7 +516,8 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 <dl class="function">
 <dt id="synthesis.normalize_function">
 <tt class="descclassname">synthesis.</tt><tt class="descname">normalize_function</tt><big>(</big><em>utterance_time_stamps</em><big>)</big><a class="headerlink" href="#synthesis.normalize_function" title="Permalink to this definition">¶</a></dt>
-<dd><p>This module normalizes the utterance time-stamps within the bounded time range of the total inflect duration(500ms/0.5s).  See: appended_utterance_time_stamps(CONSECUTIVE_BLOCKS,TIME_STAMPS,selected_inflect_block)</p>
+<dd><p>This module normalizes the utterance time-stamps within the bounded time range of the total inflect duration(500ms/0.5s).</p>
+<p>See: <a class="reference internal" href="#appended-utterance-time-stamps">appended_utterance_time_stamps</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -520,7 +535,8 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 <dl class="function">
 <dt id="synthesis.happy_patch">
 <tt class="descclassname">synthesis.</tt><tt class="descname">happy_patch</tt><big>(</big><em>sampleFrequency</em>, <em>utterance_begin</em><big>)</big><a class="headerlink" href="#synthesis.happy_patch" title="Permalink to this definition">¶</a></dt>
-<dd><p>The module helps to synthesis the &#8220;Happy&#8221; Emotion using the picth shift, picth bend(inflection) and filtering.  See: appended_utterance_time_stamps(CONSECUTIVE_BLOCKS,TIME_STAMPS,selected_inflect_block)</p>
+<dd><p>The module helps to synthesis the &#8220;Happy&#8221; Emotion using the picth shift, picth bend(inflection) and filtering.</p>
+<p>See: <a class="reference internal" href="#appended-utterance-time-stamps">appended_utterance_time_stamps</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -544,7 +560,8 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 <dl class="function">
 <dt id="synthesis.happy_tensed_patch">
 <tt class="descclassname">synthesis.</tt><tt class="descname">happy_tensed_patch</tt><big>(</big><em>sampleFrequency</em>, <em>utterance_begin</em><big>)</big><a class="headerlink" href="#synthesis.happy_tensed_patch" title="Permalink to this definition">¶</a></dt>
-<dd><p>The module helps to synthesis the &#8220;Happy_Tensed&#8221; Emotion using the picth shift, picth bend(inflection) and filtering.   See: appended_utterance_time_stamps(CONSECUTIVE_BLOCKS,TIME_STAMPS,selected_inflect_block)</p>
+<dd><p>The module helps to synthesis the &#8220;Happy_Tensed&#8221; Emotion using the picth shift, picth bend(inflection) and filtering.</p>
+<p>See: <a class="reference internal" href="#appended-utterance-time-stamps">appended_utterance_time_stamps</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -586,7 +603,8 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 <dl class="function">
 <dt id="synthesis.afraid_patch">
 <tt class="descclassname">synthesis.</tt><tt class="descname">afraid_patch</tt><big>(</big><em>sampleFrequency</em>, <em>utterance_begin</em><big>)</big><a class="headerlink" href="#synthesis.afraid_patch" title="Permalink to this definition">¶</a></dt>
-<dd><p>The module helps to synthesis the &#8220;Afraid&#8221; Emotion using the picth bend(inflection) and tremelo.   See: appended_utterance_time_stamps(consecutive_blocks,time_stamps,selected_inflect_block)</p>
+<dd><p>The module helps to synthesis the &#8220;Afraid&#8221; Emotion using the picth bend(inflection) and tremelo.</p>
+<p>See: <a class="reference internal" href="#appended-utterance-time-stamps">appended_utterance_time_stamps</a>.</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -607,6 +625,25 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
 </table>
 </dd></dl>
 
+<span class="target" id="module-Example"></span></div>
+<div class="section" id="usage-and-examples">
+<h1>Usage and Examples<a class="headerlink" href="#usage-and-examples" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">cd</span> <span class="pre">ESPP/src</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-B</span> <span class="pre">EmotiveSpeech</span></tt></p>
+<p>to get help: emotivespeech.py [-h]</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-B</span> <span class="pre">emotivespeech.py</span> <span class="pre">/home/user/Desktop/TestFolder/Test.wav</span> <span class="pre">sad</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">$</span> <span class="pre">python</span> <span class="pre">-B</span> <span class="pre">EmotiveSpeech.py</span> <span class="pre">arg1</span> <span class="pre">arg2</span></tt></p>
+<ul class="simple">
+<li>arg1(Positional Argument): Absolute Path For Wavefile</li>
+<li>arg2(Positional Argument): TypeofEmotion: (happy,sad,afraid,happy_tensed)</li>
+</ul>
+<p>Testing files are available <a class="reference external" href="https://github.com/dergkat/emotivespeech/tree/master/ESPP/examples/files">here</a></p>
+</div>
 </div>
 <div class="section" id="indices-and-tables">
 <h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
@@ -625,7 +662,14 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to EmoTrans&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#">Welcome to Emotive Speech&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#pre-requisites">Pre-Requisites</a></li>
+<li><a class="reference internal" href="#module-EmotiveSpeech">Modules and Functions</a></li>
+<li><a class="reference internal" href="#usage-and-examples">Usage and Examples</a><ul>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
 
@@ -660,7 +704,7 @@ Consecutive Blocks- These are consecutive blocks that are important for inflecti
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li><a href="#">EmoTrans 1.1.0 documentation</a> &raquo;</li> 
+        <li><a href="#">Emotive Speech 1.1.0 documentation</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
