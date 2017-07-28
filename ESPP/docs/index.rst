@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Emotive Speech's documentation!
+Welcome to Emotive Speech's documentation
 ====================================
 
 A Standard Python Package For Emotive Speech Generation Based on `DAVID <http://cream.ircam.fr/?p=44>`_ : An open-source platform for real-time emotional speech
