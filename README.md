@@ -1,9 +1,9 @@
-# Emotive Speech
+# Emotive Speech Python Package
 
-A ROS package for emotive speech generation based on DAVID: An open-source platform for real-time emotional speech
+## A Standard Python Package For Emotive Speech Generation Based on DAVID: An open-source platform for real-time emotional speech
 transformation using pysox
 
-Prerequisites
+Pre-Requisites
 -------------
 ###### pysptk
 > A python wrapper for Speech Signal Processing Toolkit (SPTK)
@@ -18,30 +18,36 @@ Prerequisites
 > we will be using the Transformers (sox.transform.Transformers) for synthesis.
 > http://pysox.readthedocs.io/en/latest/api.html | sudo apt-get install pysox
 
+Installation and Setup
+-----
+##### After fulfilling all the requirements,The Python Package of the Emotive Speech Project can be cloned as:
+```sh
+$ git clone https://github.com/dergkat/emotivespeech.git
+```
+Usage
+===========
+##### 
+```sh
+$ cd ESPP/src
+$ python -B EmotiveSpeech 
+usage: emotivespeech.py [-h] [-c chunk_size] [-s semitones] [-r cutfreq]
+                        [-g gain] [-q qfactor] [-v speed] [-d depth]
+                        [-o tempo] [-i intensity] [-p parameter_control]
+                        filename typeOfEmotion
 
-
-Build
+```
+Example
 -----
 ```sh
-$ mkdir -p catkin_ws/src
-$ cd catkin_ws/src
-$ git clone https://github.com/dergkat/emotivespeech.git
-$ cd ..
-$ catkin_make
-```
 
-Run
----
+$ python -B emotivespeech.py /home/user/Desktop/TestFolder/Test.wav sad
+```
+#### Arguments
 ```sh
-roslaunch emo_speech emospeech.launch
+$ python -B EmotiveSpeech.py arg1 arg2
 ```
+###### arg1(Positional Argument): Absolute Path For Wavefile
+###### arg2(Positional Argument): TypeofEmotion: (happy,sad,afraid,happy_tensed) 
 
-###### rosnode
- * /emotrans
 
-###### rosparam
- * /emotrans/chunk_size value: 1024
- * /emotrans/emotion_intensity: 100
- * /emotrans/file_names value: [ ]
- * /emotrans/sampling_frequency value: 8000
 
