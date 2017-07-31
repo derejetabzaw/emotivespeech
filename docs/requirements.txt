@@ -1,5 +1,5 @@
 sphinx >=1.0
-numpydoc 
-latexmk
-textlive-formats-extra
+numpydoc >=0.7.0 
+latexmk >=4.41
+tex >= 3.14159265
 
