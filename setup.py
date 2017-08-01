@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name='Emotive_Speech',
-      version='1.0',
+      version='0.1',
       description='Emotive Speech Transformation',
       author='Dereje Tadesse',
       author_email='dereje.tadesse@hansonrobotics.com',
