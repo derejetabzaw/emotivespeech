@@ -1,4 +1,0 @@
-sphinx >=1.0
-numpydoc >=0.7.0 
-
-
